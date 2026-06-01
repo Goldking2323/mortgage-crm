@@ -38,8 +38,9 @@ export default function LandingPage() {
               <span className="text-[#8B7355]">done right.</span>
             </h1>
             <p className="text-stone-500 text-lg leading-relaxed">
+              Hi, I&apos;m <strong className="text-stone-700">Atta Hosseini</strong>, your licensed mortgage agent.
               Whether you&apos;re buying your first home, renewing, or refinancing — I&apos;ll find
-              you the best rate with a lender that fits your situation. Licensed in Ontario.
+              you the best rate with a lender that fits your situation.
             </p>
           </div>
 
