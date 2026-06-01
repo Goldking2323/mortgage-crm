@@ -25,8 +25,8 @@ export function Sidebar() {
         <div className="flex items-center gap-2.5">
           <Image src="/logo.png.png" alt="Logo" width={36} height={36} className="object-contain" />
           <div>
-            <p className="text-sm font-bold text-stone-800 leading-tight">Mortgage CRM</p>
-            <p className="text-xs text-stone-400 leading-tight">Ontario Agent</p>
+            <p className="text-sm font-bold text-stone-800 leading-tight">Pegasus Mortgage</p>
+            <p className="text-xs text-stone-400 leading-tight">Lending Center Inc</p>
           </div>
         </div>
       </div>

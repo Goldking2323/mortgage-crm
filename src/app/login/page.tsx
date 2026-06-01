@@ -37,8 +37,8 @@ export default function LoginPage() {
         <div className="flex flex-col items-center gap-3 mb-8">
           <Image src="/logo.png.png" alt="Logo" width={64} height={64} className="object-contain" />
           <div className="text-center">
-            <p className="text-stone-800 font-bold text-xl">Mortgage CRM</p>
-            <p className="text-stone-400 text-sm">Agent Portal</p>
+            <p className="text-stone-800 font-bold text-xl">Pegasus Mortgage</p>
+            <p className="text-stone-400 text-sm">Lending Center Inc · Agent Portal</p>
           </div>
         </div>
 

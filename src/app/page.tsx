@@ -11,8 +11,8 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <Image src="/logo.png.png" alt="Company Logo" width={48} height={48} className="object-contain" />
             <div>
-              <p className="font-bold text-stone-800 leading-tight">Ontario Mortgage</p>
-              <p className="text-xs text-stone-500 leading-tight">Licensed Agent · Vaughan &amp; Toronto</p>
+              <p className="font-bold text-stone-800 leading-tight">Pegasus Mortgage</p>
+              <p className="text-xs text-stone-500 leading-tight">Lending Center Inc · Vaughan &amp; Toronto</p>
             </div>
           </div>
           <a
@@ -31,7 +31,7 @@ export default function LandingPage() {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 bg-[#8B7355]/10 text-[#8B7355] text-sm px-3 py-1 rounded-full border border-[#8B7355]/30">
               <Star className="w-3.5 h-3.5" />
-              Serving Vaughan, Toronto &amp; the GTA
+              Pegasus Mortgage Lending Center Inc
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-stone-900">
               Your mortgage,<br />
