@@ -127,7 +127,7 @@ export function LeadForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-[#8B7355] hover:bg-[#7a6348] text-white font-semibold py-3 px-6 rounded-lg transition disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? "Submitting..." : "Request Free Consultation →"}
       </button>
