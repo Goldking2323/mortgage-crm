@@ -16,7 +16,7 @@ export default function LandingPage() {
             </div>
           </div>
           <a
-            href="tel:+14165551234"
+            href="tel:+16478674070"
             className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355] hover:text-white transition-colors"
           >
             <Phone className="w-4 h-4" />
