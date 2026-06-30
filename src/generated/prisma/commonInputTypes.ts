@@ -187,6 +187,13 @@ export type EnumCreditRangeFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel> | $Enums.CreditRange
 }
 
+export type EnumRateTypeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.RateType | Prisma.EnumRateTypeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel> | $Enums.RateType | null
+}
+
 export type EnumLeadStatusFilter<$PrismaModel = never> = {
   equals?: $Enums.LeadStatus | Prisma.EnumLeadStatusFieldRefInput<$PrismaModel>
   in?: $Enums.LeadStatus[] | Prisma.ListEnumLeadStatusFieldRefInput<$PrismaModel>
@@ -228,6 +235,16 @@ export type EnumCreditRangeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel>
+}
+
+export type EnumRateTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.RateType | Prisma.EnumRateTypeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumRateTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.RateType | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel>
 }
 
 export type EnumLeadStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -428,6 +445,13 @@ export type NestedEnumCreditRangeFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel> | $Enums.CreditRange
 }
 
+export type NestedEnumRateTypeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.RateType | Prisma.EnumRateTypeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel> | $Enums.RateType | null
+}
+
 export type NestedEnumLeadStatusFilter<$PrismaModel = never> = {
   equals?: $Enums.LeadStatus | Prisma.EnumLeadStatusFieldRefInput<$PrismaModel>
   in?: $Enums.LeadStatus[] | Prisma.ListEnumLeadStatusFieldRefInput<$PrismaModel>
@@ -469,6 +493,16 @@ export type NestedEnumCreditRangeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumCreditRangeFilter<$PrismaModel>
+}
+
+export type NestedEnumRateTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.RateType | Prisma.EnumRateTypeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.RateType[] | Prisma.ListEnumRateTypeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumRateTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.RateType | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumRateTypeNullableFilter<$PrismaModel>
 }
 
 export type NestedEnumLeadStatusWithAggregatesFilter<$PrismaModel = never> = {

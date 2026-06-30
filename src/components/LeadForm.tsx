@@ -11,10 +11,19 @@ const labelClass = "block text-sm font-medium text-slate-700 mb-1";
 const selectClass =
   "w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white";
 
+const PURCHASE_FIXED_TERMS = [1, 2, 3, 4, 5, 7, 10];
+const REFINANCE_FIXED_TERMS = [1, 2, 3, 4];
+
 export function LeadForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [rateType, setRateType] = useState("");
+
+  const showRateFields = propertyType === "PURCHASE" || propertyType === "REFINANCE";
+  const showTerm = rateType === "FIXED";
+  const termOptions = propertyType === "PURCHASE" ? PURCHASE_FIXED_TERMS : REFINANCE_FIXED_TERMS;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,7 +40,16 @@ export function LeadForm() {
     });
 
     if (res.ok) {
-      router.push("/thank-you");
+      const result = await res.json();
+      sessionStorage.setItem(
+        "mortgageQuote",
+        JSON.stringify({
+          firstName: data.firstName,
+          propertyType: data.propertyType,
+          estimate: result.estimate,
+        })
+      );
+      router.push("/results");
     } else {
       setError("Something went wrong. Please try again.");
       setLoading(false);
@@ -63,7 +81,16 @@ export function LeadForm() {
 
       <div>
         <label className={labelClass}>What are you looking for? *</label>
-        <select name="propertyType" required className={selectClass}>
+        <select
+          name="propertyType"
+          required
+          className={selectClass}
+          value={propertyType}
+          onChange={(e) => {
+            setPropertyType(e.target.value);
+            setRateType("");
+          }}
+        >
           <option value="">Select one...</option>
           <option value="PURCHASE">Purchasing a home</option>
           <option value="REFINANCE">Refinancing</option>
@@ -89,6 +116,38 @@ export function LeadForm() {
           </div>
         </div>
       </div>
+
+      {showRateFields && (
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className={labelClass}>Rate Type</label>
+            <select
+              name="rateType"
+              className={selectClass}
+              value={rateType}
+              onChange={(e) => setRateType(e.target.value)}
+            >
+              <option value="">Select one...</option>
+              <option value="FIXED">Fixed</option>
+              {propertyType === "PURCHASE" && <option value="VARIABLE">Variable</option>}
+              {propertyType === "PURCHASE" && <option value="ADJUSTABLE">Adjustable</option>}
+            </select>
+          </div>
+          {showTerm && (
+            <div>
+              <label className={labelClass}>Term Length</label>
+              <select name="term" className={selectClass} defaultValue="">
+                <option value="">Select one...</option>
+                {termOptions.map((t) => (
+                  <option key={t} value={t}>
+                    {t} Year{t > 1 ? "s" : ""}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+        </div>
+      )}
 
       <div>
         <label className={labelClass}>Credit Score Range</label>

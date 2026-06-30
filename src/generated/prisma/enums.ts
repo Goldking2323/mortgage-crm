@@ -42,3 +42,12 @@ export const CreditRange = {
 } as const
 
 export type CreditRange = (typeof CreditRange)[keyof typeof CreditRange]
+
+
+export const RateType = {
+  FIXED: 'FIXED',
+  VARIABLE: 'VARIABLE',
+  ADJUSTABLE: 'ADJUSTABLE'
+} as const
+
+export type RateType = (typeof RateType)[keyof typeof RateType]

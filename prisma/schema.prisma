@@ -77,6 +77,12 @@ enum CreditRange {
   UNKNOWN
 }
 
+enum RateType {
+  FIXED
+  VARIABLE
+  ADJUSTABLE
+}
+
 model Lead {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
@@ -92,6 +98,10 @@ model Lead {
   downPayment   Float?
   creditRange   CreditRange  @default(UNKNOWN)
   employment    String?
+
+  rateType      RateType?
+  term          Int?
+  quotedRate    Float?
 
   referredBy   String?
   referralType String?

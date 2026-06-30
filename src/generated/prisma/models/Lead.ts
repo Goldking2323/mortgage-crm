@@ -29,11 +29,15 @@ export type AggregateLead = {
 export type LeadAvgAggregateOutputType = {
   purchasePrice: number | null
   downPayment: number | null
+  term: number | null
+  quotedRate: number | null
 }
 
 export type LeadSumAggregateOutputType = {
   purchasePrice: number | null
   downPayment: number | null
+  term: number | null
+  quotedRate: number | null
 }
 
 export type LeadMinAggregateOutputType = {
@@ -49,6 +53,9 @@ export type LeadMinAggregateOutputType = {
   downPayment: number | null
   creditRange: $Enums.CreditRange | null
   employment: string | null
+  rateType: $Enums.RateType | null
+  term: number | null
+  quotedRate: number | null
   referredBy: string | null
   referralType: string | null
   source: string | null
@@ -69,6 +76,9 @@ export type LeadMaxAggregateOutputType = {
   downPayment: number | null
   creditRange: $Enums.CreditRange | null
   employment: string | null
+  rateType: $Enums.RateType | null
+  term: number | null
+  quotedRate: number | null
   referredBy: string | null
   referralType: string | null
   source: string | null
@@ -89,6 +99,9 @@ export type LeadCountAggregateOutputType = {
   downPayment: number
   creditRange: number
   employment: number
+  rateType: number
+  term: number
+  quotedRate: number
   referredBy: number
   referralType: number
   source: number
@@ -101,11 +114,15 @@ export type LeadCountAggregateOutputType = {
 export type LeadAvgAggregateInputType = {
   purchasePrice?: true
   downPayment?: true
+  term?: true
+  quotedRate?: true
 }
 
 export type LeadSumAggregateInputType = {
   purchasePrice?: true
   downPayment?: true
+  term?: true
+  quotedRate?: true
 }
 
 export type LeadMinAggregateInputType = {
@@ -121,6 +138,9 @@ export type LeadMinAggregateInputType = {
   downPayment?: true
   creditRange?: true
   employment?: true
+  rateType?: true
+  term?: true
+  quotedRate?: true
   referredBy?: true
   referralType?: true
   source?: true
@@ -141,6 +161,9 @@ export type LeadMaxAggregateInputType = {
   downPayment?: true
   creditRange?: true
   employment?: true
+  rateType?: true
+  term?: true
+  quotedRate?: true
   referredBy?: true
   referralType?: true
   source?: true
@@ -161,6 +184,9 @@ export type LeadCountAggregateInputType = {
   downPayment?: true
   creditRange?: true
   employment?: true
+  rateType?: true
+  term?: true
+  quotedRate?: true
   referredBy?: true
   referralType?: true
   source?: true
@@ -268,6 +294,9 @@ export type LeadGroupByOutputType = {
   downPayment: number | null
   creditRange: $Enums.CreditRange
   employment: string | null
+  rateType: $Enums.RateType | null
+  term: number | null
+  quotedRate: number | null
   referredBy: string | null
   referralType: string | null
   source: string
@@ -311,6 +340,9 @@ export type LeadWhereInput = {
   downPayment?: Prisma.FloatNullableFilter<"Lead"> | number | null
   creditRange?: Prisma.EnumCreditRangeFilter<"Lead"> | $Enums.CreditRange
   employment?: Prisma.StringNullableFilter<"Lead"> | string | null
+  rateType?: Prisma.EnumRateTypeNullableFilter<"Lead"> | $Enums.RateType | null
+  term?: Prisma.IntNullableFilter<"Lead"> | number | null
+  quotedRate?: Prisma.FloatNullableFilter<"Lead"> | number | null
   referredBy?: Prisma.StringNullableFilter<"Lead"> | string | null
   referralType?: Prisma.StringNullableFilter<"Lead"> | string | null
   source?: Prisma.StringFilter<"Lead"> | string
@@ -332,6 +364,9 @@ export type LeadOrderByWithRelationInput = {
   downPayment?: Prisma.SortOrderInput | Prisma.SortOrder
   creditRange?: Prisma.SortOrder
   employment?: Prisma.SortOrderInput | Prisma.SortOrder
+  rateType?: Prisma.SortOrderInput | Prisma.SortOrder
+  term?: Prisma.SortOrderInput | Prisma.SortOrder
+  quotedRate?: Prisma.SortOrderInput | Prisma.SortOrder
   referredBy?: Prisma.SortOrderInput | Prisma.SortOrder
   referralType?: Prisma.SortOrderInput | Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -356,6 +391,9 @@ export type LeadWhereUniqueInput = Prisma.AtLeast<{
   downPayment?: Prisma.FloatNullableFilter<"Lead"> | number | null
   creditRange?: Prisma.EnumCreditRangeFilter<"Lead"> | $Enums.CreditRange
   employment?: Prisma.StringNullableFilter<"Lead"> | string | null
+  rateType?: Prisma.EnumRateTypeNullableFilter<"Lead"> | $Enums.RateType | null
+  term?: Prisma.IntNullableFilter<"Lead"> | number | null
+  quotedRate?: Prisma.FloatNullableFilter<"Lead"> | number | null
   referredBy?: Prisma.StringNullableFilter<"Lead"> | string | null
   referralType?: Prisma.StringNullableFilter<"Lead"> | string | null
   source?: Prisma.StringFilter<"Lead"> | string
@@ -377,6 +415,9 @@ export type LeadOrderByWithAggregationInput = {
   downPayment?: Prisma.SortOrderInput | Prisma.SortOrder
   creditRange?: Prisma.SortOrder
   employment?: Prisma.SortOrderInput | Prisma.SortOrder
+  rateType?: Prisma.SortOrderInput | Prisma.SortOrder
+  term?: Prisma.SortOrderInput | Prisma.SortOrder
+  quotedRate?: Prisma.SortOrderInput | Prisma.SortOrder
   referredBy?: Prisma.SortOrderInput | Prisma.SortOrder
   referralType?: Prisma.SortOrderInput | Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -405,6 +446,9 @@ export type LeadScalarWhereWithAggregatesInput = {
   downPayment?: Prisma.FloatNullableWithAggregatesFilter<"Lead"> | number | null
   creditRange?: Prisma.EnumCreditRangeWithAggregatesFilter<"Lead"> | $Enums.CreditRange
   employment?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  rateType?: Prisma.EnumRateTypeNullableWithAggregatesFilter<"Lead"> | $Enums.RateType | null
+  term?: Prisma.IntNullableWithAggregatesFilter<"Lead"> | number | null
+  quotedRate?: Prisma.FloatNullableWithAggregatesFilter<"Lead"> | number | null
   referredBy?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   referralType?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   source?: Prisma.StringWithAggregatesFilter<"Lead"> | string
@@ -425,6 +469,9 @@ export type LeadCreateInput = {
   downPayment?: number | null
   creditRange?: $Enums.CreditRange
   employment?: string | null
+  rateType?: $Enums.RateType | null
+  term?: number | null
+  quotedRate?: number | null
   referredBy?: string | null
   referralType?: string | null
   source?: string
@@ -446,6 +493,9 @@ export type LeadUncheckedCreateInput = {
   downPayment?: number | null
   creditRange?: $Enums.CreditRange
   employment?: string | null
+  rateType?: $Enums.RateType | null
+  term?: number | null
+  quotedRate?: number | null
   referredBy?: string | null
   referralType?: string | null
   source?: string
@@ -467,6 +517,9 @@ export type LeadUpdateInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -488,6 +541,9 @@ export type LeadUncheckedUpdateInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -509,6 +565,9 @@ export type LeadCreateManyInput = {
   downPayment?: number | null
   creditRange?: $Enums.CreditRange
   employment?: string | null
+  rateType?: $Enums.RateType | null
+  term?: number | null
+  quotedRate?: number | null
   referredBy?: string | null
   referralType?: string | null
   source?: string
@@ -529,6 +588,9 @@ export type LeadUpdateManyMutationInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -549,6 +611,9 @@ export type LeadUncheckedUpdateManyInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -569,6 +634,9 @@ export type LeadCountOrderByAggregateInput = {
   downPayment?: Prisma.SortOrder
   creditRange?: Prisma.SortOrder
   employment?: Prisma.SortOrder
+  rateType?: Prisma.SortOrder
+  term?: Prisma.SortOrder
+  quotedRate?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
   referralType?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -579,6 +647,8 @@ export type LeadCountOrderByAggregateInput = {
 export type LeadAvgOrderByAggregateInput = {
   purchasePrice?: Prisma.SortOrder
   downPayment?: Prisma.SortOrder
+  term?: Prisma.SortOrder
+  quotedRate?: Prisma.SortOrder
 }
 
 export type LeadMaxOrderByAggregateInput = {
@@ -594,6 +664,9 @@ export type LeadMaxOrderByAggregateInput = {
   downPayment?: Prisma.SortOrder
   creditRange?: Prisma.SortOrder
   employment?: Prisma.SortOrder
+  rateType?: Prisma.SortOrder
+  term?: Prisma.SortOrder
+  quotedRate?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
   referralType?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -614,6 +687,9 @@ export type LeadMinOrderByAggregateInput = {
   downPayment?: Prisma.SortOrder
   creditRange?: Prisma.SortOrder
   employment?: Prisma.SortOrder
+  rateType?: Prisma.SortOrder
+  term?: Prisma.SortOrder
+  quotedRate?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
   referralType?: Prisma.SortOrder
   source?: Prisma.SortOrder
@@ -624,6 +700,8 @@ export type LeadMinOrderByAggregateInput = {
 export type LeadSumOrderByAggregateInput = {
   purchasePrice?: Prisma.SortOrder
   downPayment?: Prisma.SortOrder
+  term?: Prisma.SortOrder
+  quotedRate?: Prisma.SortOrder
 }
 
 export type LeadScalarRelationFilter = {
@@ -645,6 +723,10 @@ export type NullableFloatFieldUpdateOperationsInput = {
 
 export type EnumCreditRangeFieldUpdateOperationsInput = {
   set?: $Enums.CreditRange
+}
+
+export type NullableEnumRateTypeFieldUpdateOperationsInput = {
+  set?: $Enums.RateType | null
 }
 
 export type EnumLeadStatusFieldUpdateOperationsInput = {
@@ -678,6 +760,9 @@ export type LeadCreateWithoutContactInput = {
   downPayment?: number | null
   creditRange?: $Enums.CreditRange
   employment?: string | null
+  rateType?: $Enums.RateType | null
+  term?: number | null
+  quotedRate?: number | null
   referredBy?: string | null
   referralType?: string | null
   source?: string
@@ -698,6 +783,9 @@ export type LeadUncheckedCreateWithoutContactInput = {
   downPayment?: number | null
   creditRange?: $Enums.CreditRange
   employment?: string | null
+  rateType?: $Enums.RateType | null
+  term?: number | null
+  quotedRate?: number | null
   referredBy?: string | null
   referralType?: string | null
   source?: string
@@ -734,6 +822,9 @@ export type LeadUpdateWithoutContactInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -754,6 +845,9 @@ export type LeadUncheckedUpdateWithoutContactInput = {
   downPayment?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   creditRange?: Prisma.EnumCreditRangeFieldUpdateOperationsInput | $Enums.CreditRange
   employment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  rateType?: Prisma.NullableEnumRateTypeFieldUpdateOperationsInput | $Enums.RateType | null
+  term?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  quotedRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   source?: Prisma.StringFieldUpdateOperationsInput | string
@@ -776,6 +870,9 @@ export type LeadSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   downPayment?: boolean
   creditRange?: boolean
   employment?: boolean
+  rateType?: boolean
+  term?: boolean
+  quotedRate?: boolean
   referredBy?: boolean
   referralType?: boolean
   source?: boolean
@@ -797,6 +894,9 @@ export type LeadSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   downPayment?: boolean
   creditRange?: boolean
   employment?: boolean
+  rateType?: boolean
+  term?: boolean
+  quotedRate?: boolean
   referredBy?: boolean
   referralType?: boolean
   source?: boolean
@@ -817,6 +917,9 @@ export type LeadSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   downPayment?: boolean
   creditRange?: boolean
   employment?: boolean
+  rateType?: boolean
+  term?: boolean
+  quotedRate?: boolean
   referredBy?: boolean
   referralType?: boolean
   source?: boolean
@@ -837,6 +940,9 @@ export type LeadSelectScalar = {
   downPayment?: boolean
   creditRange?: boolean
   employment?: boolean
+  rateType?: boolean
+  term?: boolean
+  quotedRate?: boolean
   referredBy?: boolean
   referralType?: boolean
   source?: boolean
@@ -844,7 +950,7 @@ export type LeadSelectScalar = {
   status?: boolean
 }
 
-export type LeadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "firstName" | "lastName" | "email" | "phone" | "propertyType" | "purchasePrice" | "downPayment" | "creditRange" | "employment" | "referredBy" | "referralType" | "source" | "message" | "status", ExtArgs["result"]["lead"]>
+export type LeadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "firstName" | "lastName" | "email" | "phone" | "propertyType" | "purchasePrice" | "downPayment" | "creditRange" | "employment" | "rateType" | "term" | "quotedRate" | "referredBy" | "referralType" | "source" | "message" | "status", ExtArgs["result"]["lead"]>
 export type LeadInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   contact?: boolean | Prisma.Lead$contactArgs<ExtArgs>
 }
@@ -869,6 +975,9 @@ export type $LeadPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     downPayment: number | null
     creditRange: $Enums.CreditRange
     employment: string | null
+    rateType: $Enums.RateType | null
+    term: number | null
+    quotedRate: number | null
     referredBy: string | null
     referralType: string | null
     source: string
@@ -1310,6 +1419,9 @@ export interface LeadFieldRefs {
   readonly downPayment: Prisma.FieldRef<"Lead", 'Float'>
   readonly creditRange: Prisma.FieldRef<"Lead", 'CreditRange'>
   readonly employment: Prisma.FieldRef<"Lead", 'String'>
+  readonly rateType: Prisma.FieldRef<"Lead", 'RateType'>
+  readonly term: Prisma.FieldRef<"Lead", 'Int'>
+  readonly quotedRate: Prisma.FieldRef<"Lead", 'Float'>
   readonly referredBy: Prisma.FieldRef<"Lead", 'String'>
   readonly referralType: Prisma.FieldRef<"Lead", 'String'>
   readonly source: Prisma.FieldRef<"Lead", 'String'>

@@ -1178,6 +1178,9 @@ export const LeadScalarFieldEnum = {
   downPayment: 'downPayment',
   creditRange: 'creditRange',
   employment: 'employment',
+  rateType: 'rateType',
+  term: 'term',
+  quotedRate: 'quotedRate',
   referredBy: 'referredBy',
   referralType: 'referralType',
   source: 'source',
@@ -1351,6 +1354,20 @@ export type EnumCreditRangeFieldRefInput<$PrismaModel> = FieldRefInputType<$Pris
  * Reference to a field of type 'CreditRange[]'
  */
 export type ListEnumCreditRangeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CreditRange[]'>
+    
+
+
+/**
+ * Reference to a field of type 'RateType'
+ */
+export type EnumRateTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RateType'>
+    
+
+
+/**
+ * Reference to a field of type 'RateType[]'
+ */
+export type ListEnumRateTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RateType[]'>
     
 
 
