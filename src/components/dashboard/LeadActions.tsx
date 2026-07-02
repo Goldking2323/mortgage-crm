@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { PIPELINE_STAGES } from "@/lib/utils";
-import { ChevronDown, UserPlus } from "lucide-react";
+import { ChevronDown, UserPlus, Trash2 } from "lucide-react";
 import Link from "next/link";
 
 interface Props {
@@ -27,6 +27,14 @@ export function LeadActions({ leadId, currentStatus, hasContact }: Props) {
     setUpdating(false);
   }
 
+  async function deleteLead() {
+    if (!confirm("Delete this lead permanently?")) return;
+    setUpdating(true);
+    await fetch(`/api/leads/${leadId}`, { method: "DELETE" });
+    router.refresh();
+    setUpdating(false);
+  }
+
   async function createContact() {
     setUpdating(true);
     await fetch("/api/contacts", {
@@ -40,6 +48,14 @@ export function LeadActions({ leadId, currentStatus, hasContact }: Props) {
 
   return (
     <div className="flex items-center gap-2">
+      <button
+        onClick={deleteLead}
+        disabled={updating}
+        title="Delete lead"
+        className="text-slate-300 hover:text-red-500 transition-colors disabled:opacity-50"
+      >
+        <Trash2 className="w-3.5 h-3.5" />
+      </button>
       {!hasContact && (
         <button
           onClick={createContact}
