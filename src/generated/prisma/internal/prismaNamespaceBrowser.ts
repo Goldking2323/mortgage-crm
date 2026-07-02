@@ -59,7 +59,8 @@ export const ModelName = {
   Contact: 'Contact',
   Note: 'Note',
   FollowUp: 'FollowUp',
-  Document: 'Document'
+  Document: 'Document',
+  SocialPost: 'SocialPost'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -202,6 +203,19 @@ export const DocumentScalarFieldEnum = {
 } as const
 
 export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum]
+
+
+export const SocialPostScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  order: 'order',
+  imageUrl: 'imageUrl',
+  caption: 'caption',
+  active: 'active',
+  lastPostedAt: 'lastPostedAt'
+} as const
+
+export type SocialPostScalarFieldEnum = (typeof SocialPostScalarFieldEnum)[keyof typeof SocialPostScalarFieldEnum]
 
 
 export const SortOrder = {

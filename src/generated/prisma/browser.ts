@@ -62,3 +62,8 @@ export type FollowUp = Prisma.FollowUpModel
  * 
  */
 export type Document = Prisma.DocumentModel
+/**
+ * Model SocialPost
+ * 
+ */
+export type SocialPost = Prisma.SocialPostModel

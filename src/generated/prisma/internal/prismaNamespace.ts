@@ -392,7 +392,8 @@ export const ModelName = {
   Contact: 'Contact',
   Note: 'Note',
   FollowUp: 'FollowUp',
-  Document: 'Document'
+  Document: 'Document',
+  SocialPost: 'SocialPost'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -408,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "account" | "session" | "user" | "verificationToken" | "lead" | "contact" | "note" | "followUp" | "document"
+    modelProps: "account" | "session" | "user" | "verificationToken" | "lead" | "contact" | "note" | "followUp" | "document" | "socialPost"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1078,6 +1079,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SocialPost: {
+      payload: Prisma.$SocialPostPayload<ExtArgs>
+      fields: Prisma.SocialPostFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SocialPostFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SocialPostFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        findFirst: {
+          args: Prisma.SocialPostFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SocialPostFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        findMany: {
+          args: Prisma.SocialPostFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>[]
+        }
+        create: {
+          args: Prisma.SocialPostCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        createMany: {
+          args: Prisma.SocialPostCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SocialPostCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>[]
+        }
+        delete: {
+          args: Prisma.SocialPostDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        update: {
+          args: Prisma.SocialPostUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        deleteMany: {
+          args: Prisma.SocialPostDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SocialPostUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SocialPostUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>[]
+        }
+        upsert: {
+          args: Prisma.SocialPostUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SocialPostPayload>
+        }
+        aggregate: {
+          args: Prisma.SocialPostAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSocialPost>
+        }
+        groupBy: {
+          args: Prisma.SocialPostGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SocialPostGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SocialPostCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SocialPostCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1241,6 +1316,19 @@ export const DocumentScalarFieldEnum = {
 } as const
 
 export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum]
+
+
+export const SocialPostScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  order: 'order',
+  imageUrl: 'imageUrl',
+  caption: 'caption',
+  active: 'active',
+  lastPostedAt: 'lastPostedAt'
+} as const
+
+export type SocialPostScalarFieldEnum = (typeof SocialPostScalarFieldEnum)[keyof typeof SocialPostScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1510,6 +1598,7 @@ export type GlobalOmitConfig = {
   note?: Prisma.NoteOmit
   followUp?: Prisma.FollowUpOmit
   document?: Prisma.DocumentOmit
+  socialPost?: Prisma.SocialPostOmit
 }
 
 /* Types for Logging */

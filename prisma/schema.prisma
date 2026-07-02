@@ -168,3 +168,14 @@ model Document {
   url  String
   type String
 }
+
+model SocialPost {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  order     Int      @unique
+  imageUrl  String
+  caption   String   @db.Text
+  active    Boolean  @default(true)
+  lastPostedAt DateTime?
+}

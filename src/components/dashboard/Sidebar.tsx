@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { Home, Users, Inbox, Kanban, CalendarCheck, LogOut } from "lucide-react";
+import { Home, Users, Inbox, Kanban, CalendarCheck, LogOut, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/pipeline", label: "Pipeline", icon: Kanban },
   { href: "/contacts", label: "Contacts", icon: Users },
   { href: "/follow-ups", label: "Follow-Ups", icon: CalendarCheck },
+  { href: "/social-posts", label: "Social Posts", icon: Share2 },
 ];
 
 export function Sidebar() {
