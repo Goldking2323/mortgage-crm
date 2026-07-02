@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 const CRON_SECRET = process.env.CRON_SECRET;
 const FB_USER_TOKEN = process.env.FB_USER_TOKEN;
@@ -51,9 +53,10 @@ async function postToInstagram(caption: string, imageUrl: string, igId: string, 
 }
 
 export async function POST(req: NextRequest) {
-  // Verify cron secret so only authorized callers can trigger this
+  // Allow either a valid dashboard session OR the cron secret header
   const secret = req.headers.get("x-cron-secret");
-  if (CRON_SECRET && secret !== CRON_SECRET) {
+  const session = await getServerSession(authOptions);
+  if (!session && secret !== CRON_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

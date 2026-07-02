@@ -61,10 +61,7 @@ export default function SocialPostsPage() {
   async function triggerPost() {
     setPosting(true);
     setMessage("");
-    const res = await fetch("/api/social/post", {
-      method: "POST",
-      headers: { "x-cron-secret": process.env.NEXT_PUBLIC_CRON_SECRET ?? "" },
-    });
+    const res = await fetch("/api/social/post", { method: "POST" });
     const data = await res.json();
     setMessage(data.success ? `Posted successfully (post #${data.order})` : `Error: ${data.error || data.message}`);
     setPosting(false);
